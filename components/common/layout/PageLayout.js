@@ -29,7 +29,6 @@ const PageLayout = ({
       <BackgroundWrapper>
         {!pressPage && <Header navigationItems={navigationURLs} />}
         <div>{children}</div>
-        {!pressPage && !homePage && <Subscribe />}
         <Footer pressPage={pressPage} navigationItems={navigationURLs} />
       </BackgroundWrapper>
     </div>
