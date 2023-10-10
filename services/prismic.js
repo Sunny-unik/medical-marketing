@@ -7,7 +7,7 @@ const apiEndpoint = `https://${repositoryName}.cdn.prismic.io/api/v2`;
 export const getPrismicData = async () => {
   const client = Prismic.client(apiEndpoint, { accessToken });
   const response = await client.query(
-    Prismic.Predicates.any("document.type", ["page", "type", "image"])
+    Prismic.Predicates.any("document.type", ["landing_page"])
   );
 
   return response.results;

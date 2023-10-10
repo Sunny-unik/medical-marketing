@@ -2,26 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html,
+body {
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  @apply bg-white;
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  color: "#FFF9ED" !important;
+}
+
+body > div {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.boldToGrad > p > strong {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-lightOrange to-darkOrange;
+}
+
+@layer components {
+  .styledDocument a {
+    @apply font-semibold text-darkBlue;
+  }
+  .styledDocument h1 {
+    @apply text-3xl font-semibold py-5 leading-10;
+  }
+  .styledDocument h2 {
+    @apply text-2xl font-semibold py-4 leading-8;
+  }
+  .styledDocument h3 {
+    @apply text-lg font-semibold py-3 leading-7;
+  }
+  .styledDocument h4 {
+    @apply text-base font-semibold py-3 leading-7;
+  }
+  .styledDocument h5 {
+    @apply text-sm font-semibold py-2 leading-6;
+  }
+  .styledDocument h6 {
+    @apply text-xs font-semibold py-1 leading-5;
+  }
 }
