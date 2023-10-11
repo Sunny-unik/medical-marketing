@@ -1,3 +1,4 @@
+import Prismic from "prismic-javascript";
 import PageLayout from "@/components/common/layout/PageLayout";
 import Background from "@/components/sections/home-page/Background";
 import Hero from "@/components/sections/home-page/Hero";
@@ -5,10 +6,10 @@ import Logos from "@/components/sections/home-page/Logos";
 import Newsletter from "@/components/sections/home-page/Newsletter";
 import Features from "@/components/sections/home-page/features/Features";
 import Testimonials from "@/components/sections/home-page/testimonials/Testimonials";
-import { getPrismicData } from "@/services/prismic";
+import getPrismicClient from "@/services/prismic";
 
-export default function Home({ prismicData, commonData, homePageData }) {
-  console.log(prismicData);
+export default function Home({ landingPageData, commonData, homePageData }) {
+  console.log(landingPageData);
 
   return (
     <PageLayout
@@ -26,7 +27,10 @@ export default function Home({ prismicData, commonData, homePageData }) {
 }
 
 export async function getServerSideProps() {
-  const prismicData = await getPrismicData();
+  const prismicClient = getPrismicClient();
+  const landingPageData = await prismicClient.query(
+    Prismic.Predicates.at("document.type", "landing_page")
+  );
   const commonData = {
     navigationLinks: [
       {
@@ -181,9 +185,24 @@ export async function getServerSideProps() {
     ],
     testimonialsSection: {
       _type: "testimonialsSection",
-      title: "testinomial title",
-      heading: "testinomial heading",
-      testimonials: ["<SanityKeyedReference<SanityTestimonial>>"]
+      title: "testimonial title",
+      heading: "testimonial heading",
+      testimonials: [
+        {
+          twitterUsername: "first twitter username",
+          twitterName: "first twitter name",
+          userImage: "/next.svg",
+          testimonial: "first twitter some testimonial",
+          tweetLink: "https://twitter.com/tweet-link"
+        },
+        {
+          twitterUsername: "second twitter username",
+          twitterName: "second twitter name",
+          userImage: "/vercel.svg",
+          testimonial: "second twitter testimonial",
+          tweetLink: "https://twitter.com/second-link"
+        }
+      ]
     },
     blogSection: {
       _type: "blogSection",
@@ -193,5 +212,11 @@ export async function getServerSideProps() {
     }
   };
 
-  return { props: { prismicData, commonData, homePageData: demoHomeData } };
+  return {
+    props: {
+      landingPageData: landingPageData?.results[0],
+      commonData,
+      homePageData: demoHomeData
+    }
+  };
 }
