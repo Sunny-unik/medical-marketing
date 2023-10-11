@@ -63,7 +63,7 @@ const SocialLinks = ({ aboutPage, social }) => {
               width={37}
               height={37}
               alt={socialLinkPlaceholder}
-              src={socialIcon || ""}
+              src={socialIcon?.asset?.url || socialIcon || ""}
             />
           </a>
         </div>
