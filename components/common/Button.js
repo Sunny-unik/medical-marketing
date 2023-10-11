@@ -16,7 +16,7 @@ const Button = ({
   const widthStyle = fullWidth ? `w-full largeTablet:w-fit` : `w-fit`;
   const borderVariantStyle =
     borderVariant === "neon"
-      ? `bg-gradient-to-br from-[#ED5432] via-[#EDA232] to-[#ED5432] drop-shadow-[0_0_4px_#ED5432] hover:via-[#ED5432] hover:to-[#ED5432] [&_div]:hover:bg-[#ED5432]`
+      ? `bg-gradient-to-br from-[#A428BC] via-[#FFF8C9] to-[#A428BC] drop-shadow-[0_0_4px_#ED5432] hover:via-[#FFF8C9] hover:to-[#ED5432] [&_div]:hover:bg-[#610C9F]`
       : `bg-[#687076] hover:bg-[#ECE5E5] [&_div]:hover:bg-[#ECE5E5] [&_span]:hover:text-[#11181C]`;
   const backgroundVariantStyle =
     backgroundVariant === "orange" || gitHub ? "bg-[#211E1C]" : "bg-darkBG";

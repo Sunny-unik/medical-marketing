@@ -5,47 +5,55 @@ import Link from "next/link";
 import SectionWrapper from "../../common/layout/SectionWrapper";
 import ContainerWithLine from "../../common/ContainerWithLine";
 import { Heading, Typography } from "../../common/text";
-import Button from "../../common/Button";
-import DecoratedText from "../../common/text/utils/DecoratedText";
-import Image from "next/image";
+import Logos from "./Logos";
+// import Button from "../../common/Button";
+// import DecoratedText from "../../common/text/utils/DecoratedText";
+// import Image from "next/image";
 
 const Hero = ({ data }) => {
+  console.log("hero data", data);
+  const {
+    primary: { featured_in, featured_in_image }
+  } = data;
+
   return (
-    <SectionWrapper pt={115} pts={60} pbs={0}>
-      <ContainerWithLine>
-        <main>
-          <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
-            <div className="flex-1 ">
-              <Typography
-                alignSmall="left"
-                alignLarge="left"
-                variant="preHeading"
-              >
-                YOU GOT THIS
-              </Typography>
-
-              <div className="relative">
-                <img
-                  className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]"
-                  src="/icons/journey_ball.svg"
-                  alt="Starting point"
-                />
-
-                <Heading component="h1" alignSmall="left" alignLarge="left">
-                  Your next open source journey $orange-to-yellowstarts
-                  here$orange-to-yellow
-                </Heading>
-              </div>
-
-              <div className="py-10">
-                <Typography alignLarge="left" alignSmall="left" variant="body3">
-                  Start the path to your next contribution and join the global
-                  community of open source developers making an impact around
-                  the world.
+    <>
+      <SectionWrapper pt={115} pts={60} pbs={0}>
+        <ContainerWithLine>
+          <main>
+            <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
+              <div className="flex-1 ">
+                <Typography
+                  alignSmall="left"
+                  alignLarge="left"
+                  variant="preHeading"
+                >
+                  {data.primary.h1[0].text}
                 </Typography>
-              </div>
 
-              <div className="flex gap-4 flex-col largeTablet:flex-row">
+                <div className="relative">
+                  <img
+                    className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]"
+                    src="/icons/journey_ball.svg"
+                    alt="Starting point"
+                  />
+
+                  <Heading component="h1" alignSmall="left" alignLarge="left">
+                    {data.primary.header[0].text}
+                  </Heading>
+                </div>
+
+                <div className="py-10">
+                  <Typography
+                    alignLarge="left"
+                    alignSmall="left"
+                    variant="body3"
+                  >
+                    {data.primary.sub_header[0].text}
+                  </Typography>
+                </div>
+
+                {/* <div className="flex gap-4 flex-col largeTablet:flex-row">
                 {data?.cta?.map((item, i) => (
                   <Button
                     key={i}
@@ -55,9 +63,9 @@ const Hero = ({ data }) => {
                     {item.ctaLabel}
                   </Button>
                 ))}
-              </div>
+              </div> */}
 
-              <div className="pt-6 pb-10">
+                {/* <div className="pt-6 pb-10">
                 <Typography alignLarge="left" alignSmall="left" variant="body3">
                   Maintaining a team?
                   <span>
@@ -66,26 +74,37 @@ const Hero = ({ data }) => {
                     </Link>
                   </span>
                 </Typography>
+              </div> */}
               </div>
-            </div>
 
-            <div className="flex-1">
-              <div>
-                <Image
-                  width={600}
-                  height={600}
-                  priority={true}
-                  loading="eager"
-                  className="relative scale-125 largeTablet:scale-125 scl -right-4"
-                  src="/hero.svg"
-                  alt="Insight Dashboard"
-                />
+              <div className="flex-1">
+                <div>
+                  <img
+                    loading="eager"
+                    className="relative  scl -right-4"
+                    // scale-125 largeTablet:scale-125
+                    src={data.primary.video_light_weight.url}
+                    alt="Insight Dashboard"
+                    style={{
+                      cursor: "pointer",
+                      maxHeight: 250,
+                      objectFit: "cover",
+                      width: "100%"
+                    }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </main>
-      </ContainerWithLine>
-    </SectionWrapper>
+          </main>
+        </ContainerWithLine>
+      </SectionWrapper>
+      <Logos
+        data={{
+          logoText: data.primary.featured_in[0].text,
+          ...data.primary.featured_in_image
+        }}
+      />
+    </>
   );
 };
 

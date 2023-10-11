@@ -44,7 +44,9 @@ module.exports = {
         brandOrange: "#ED6A32",
         textPrimary: "#FFF9ED",
         footerBG: "rgba(248, 114, 22, 0.07)",
-        footerDividerColor: "rgba(248, 114, 22, 0.07)"
+        footerDividerColor: "rgba(248, 114, 22, 0.07)",
+        mm_secondary: "#ffc400",
+        mm_primary: "rgb(164 40 188)"
       },
       fontFamily: {
         primary: "'Inter', sans-serif",

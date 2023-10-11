@@ -3,7 +3,6 @@ import React from "react";
 // Components
 import Header from "../../sections/navigation/Header";
 import Footer from "../../sections/Footer";
-import Subscribe from "../../sections/Subscribe";
 import SeoBlock from "./SEO/SEO";
 
 const PageLayout = ({

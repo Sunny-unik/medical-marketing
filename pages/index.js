@@ -12,14 +12,19 @@ import { commonData, homePageData } from "@/services/dummyData";
 export default function Home({ landingPageData, commonData, homePageData }) {
   console.log(landingPageData);
 
+  const heroData = landingPageData.data.body.filter(
+    (x) => x.slice_type == "hero_landing"
+  )[0];
+  console.log("heroData", heroData);
+
   return (
     <PageLayout
       seoData={commonData.seoData}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
     >
-      <Hero data={homePageData.hero} />
-      <Logos data={homePageData.hero.users} />
+      <Hero data={heroData} />
+      {/* <Logos data={homePageData.hero.users} /> */}
       <Features data={homePageData.features} />
       <Testimonials data={homePageData.testimonialsSection} />
       <Newsletter />
