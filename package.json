@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -26,6 +27,7 @@
     "rss": "^1.2.2"
   },
   "devDependencies": {
+    "@slicemachine/adapter-next": "^0.3.19",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
