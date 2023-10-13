@@ -6,6 +6,7 @@ import SectionWrapper from "../../common/layout/SectionWrapper";
 import ContainerWithLine from "../../common/ContainerWithLine";
 import { Heading, Typography } from "../../common/text";
 import Logos from "./Logos";
+import Image from "next/image";
 // import Button from "../../common/Button";
 // import DecoratedText from "../../common/text/utils/DecoratedText";
 // import Image from "next/image";
@@ -13,14 +14,22 @@ import Logos from "./Logos";
 const Hero = ({ data }) => {
   console.log("hero data", data);
   const {
-    primary: { featured_in, featured_in_image }
+    primary: {
+      featured_in,
+      featured_in_image,
+      h1,
+      left_side_icon,
+      header,
+      sub_header,
+      video_light_weight
+    }
   } = data;
 
   return (
     <>
       <SectionWrapper pt={115} pts={60} pbs={0}>
         <ContainerWithLine>
-          <main>
+          <main id={data.id}>
             <div className="flex largeTablet:items-center h-full flex-col gap-x-6 gap-y-10 largeTablet:flex-row mx-6">
               <div className="flex-1 ">
                 <Typography
@@ -28,18 +37,19 @@ const Hero = ({ data }) => {
                   alignLarge="left"
                   variant="preHeading"
                 >
-                  {data.primary.h1[0].text}
+                  {h1[0].text}
                 </Typography>
 
                 <div className="relative">
-                  <img
+                  <Image
                     className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]"
-                    src="/icons/journey_ball.svg"
-                    alt="Starting point"
+                    src={left_side_icon.url}
+                    alt={left_side_icon.alt}
+                    width={left_side_icon.dimensions.width}
+                    height={left_side_icon.dimensions.height}
                   />
-
                   <Heading component="h1" alignSmall="left" alignLarge="left">
-                    {data.primary.header[0].text}
+                    {header[0].text}
                   </Heading>
                 </div>
 
@@ -49,7 +59,7 @@ const Hero = ({ data }) => {
                     alignSmall="left"
                     variant="body3"
                   >
-                    {data.primary.sub_header[0].text}
+                    {sub_header[0].text}
                   </Typography>
                 </div>
 
@@ -83,7 +93,7 @@ const Hero = ({ data }) => {
                     loading="eager"
                     className="relative  scl -right-4"
                     // scale-125 largeTablet:scale-125
-                    src={data.primary.video_light_weight.url}
+                    src={video_light_weight.url}
                     alt="Insight Dashboard"
                     style={{
                       cursor: "pointer",
@@ -100,8 +110,8 @@ const Hero = ({ data }) => {
       </SectionWrapper>
       <Logos
         data={{
-          logoText: data.primary.featured_in[0].text,
-          ...data.primary.featured_in_image
+          logoText: featured_in[0].text,
+          ...featured_in_image
         }}
       />
     </>
