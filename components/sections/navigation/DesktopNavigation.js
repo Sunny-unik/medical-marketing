@@ -19,8 +19,8 @@ const DesktopNavigation = ({ navigationItems, logo }) => {
   // };
 
   return (
-    <div className="items-center w-full justify-between flex mr-5">
-      <div className="h-[26px] w-[150px] cursor-pointer">
+    <div className="items-center w-full justify-between flex largeTablet:mr-5 mb-5 largeTablet:mb-0">
+      <div className=" hidden largeTablet:block h-[26px] w-[150px] cursor-pointer">
         <Link href="/" passHref>
           <Image src={logo} alt="Open Sauced" />
         </Link>
@@ -35,6 +35,7 @@ const DesktopNavigation = ({ navigationItems, logo }) => {
         ))}
       </div> */}
       <Button
+        fullWidth
         contactNumber={"tel:+34678647490"}
         href="https://medicalmarketing.es/"
         gitHub

@@ -9,12 +9,16 @@ const CTA = ({ data }) => {
   return (
     <SectionWrapper pb={150} pbs={105}>
       <Typography variant="preHeading">{data?.after_cta[0]?.text}</Typography>
-      <div className="w-full largeTablet:w-2/3 flex flex-col">
+      <div className="w-full items-center flex flex-col">
         <Button href={data?.destination_link_of_cta.url}>
-          {data?.main_text[0]?.text}
-          <Typography variant="preHeading">
-            {data?.secondary_text[0]?.text}
-          </Typography>
+          <div className="flex flex-col">
+            <Typography variant="subHeading">
+              {data?.main_text[0]?.text}
+            </Typography>
+            <Typography variant="body4">
+              {data?.secondary_text[0]?.text}
+            </Typography>
+          </div>
         </Button>
       </div>
       <div className="w-full largeTablet:w-2/3 pt-4 pb-16 largeTablet:pt-10 largeTablet:pb-20 ">

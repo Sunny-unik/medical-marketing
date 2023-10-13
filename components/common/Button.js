@@ -28,13 +28,15 @@ const Button = ({
         <div
           className={`${commonStyle} ${widthStyle} ${borderVariantStyle} transition-all ease-in-out duration-400`}
         >
-          <div
-            className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle} transition-all ease-in-out duration-400`}
-          >
-            <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex transition-all ease-in-out duration-400">
-              <a href={contactNumber}>Call Us</a>
-            </span>
-          </div>
+          <a href={contactNumber}>
+            <div
+              className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle} transition-all ease-in-out duration-400`}
+            >
+              <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex transition-all ease-in-out duration-400">
+                Call Us
+              </span>
+            </div>
+          </a>
         </div>
       ) : (
         <Link href={href} passHref>
