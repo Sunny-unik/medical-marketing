@@ -1,12 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 // Components
 import SectionWrapper from "../common/layout/SectionWrapper";
 import SocialLinks from "../common/SocialLinks";
-
-import MedicalMarketingLogo from "../../public/medicosLogo/medicos-logo-trans-wt.png";
 
 const footerContext = {
   pages: [
@@ -47,7 +44,10 @@ const Footer = ({ pressPage, navigationItems }) => {
       <SectionWrapper pbs={0}>
         <div className="w-full pt-10 pb-16 largeTablet:pt-12">
           <div className="w-[140px] h-6 relative">
-            <Image alt="Brand logo" src={MedicalMarketingLogo} />
+            <img
+              alt="Brand logo"
+              src="/medicosLogo/medicos-logo-trans-wt.png"
+            />
           </div>
         </div>
         <div className="w-full flex flex-col largeTablet:flex-row">

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 // import { useRouter } from "next/router";
 
@@ -22,7 +21,7 @@ const DesktopNavigation = ({ navigationItems, logo }) => {
     <div className="items-center w-full justify-between flex largeTablet:mr-5 mb-5 largeTablet:mb-0">
       <div className=" hidden largeTablet:block h-[26px] w-[150px] cursor-pointer">
         <Link href="/" passHref>
-          <Image src={logo} alt="Open Sauced" />
+          <img src={logo} alt="Open Sauced" />
         </Link>
       </div>
       {/* <div className="flex gap-8">
