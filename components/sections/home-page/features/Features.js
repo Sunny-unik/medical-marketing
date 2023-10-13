@@ -4,6 +4,8 @@ import React from "react";
 import Feature from "./Feature";
 import SectionWrapper from "../../../common/layout/SectionWrapper";
 import EndingLine from "../../../common/EndingLine";
+import CTA from "../CTA";
+import ContainerWithLine from "@/components/common/ContainerWithLine";
 
 const className = [
   {
@@ -20,16 +22,21 @@ const className = [
   }
 ];
 
-const Features = ({ data }) => {
+const Features = ({ data, ctaData }) => {
   return (
     <SectionWrapper pbs={0}>
       {data?.map((feature, i) => (
-        <Feature
-          key={feature._key}
-          feature={feature}
-          index={i}
-          className={className[i]}
-        />
+        <>
+          <Feature
+            key={feature._key}
+            feature={feature}
+            index={i}
+            className={className[i]}
+          />
+          <ContainerWithLine>
+            <CTA data={ctaData[i].primary} />
+          </ContainerWithLine>
+        </>
       ))}
 
       <EndingLine />

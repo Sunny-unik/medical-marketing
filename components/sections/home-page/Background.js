@@ -12,11 +12,16 @@ const Background = ({ children }) => {
   return (
     <div className="bg-darkBG text-white h-fit overflow-hidden relative">
       <div className="absolute hidden largeTablet:block largeTablet:top-[-40rem] largeTablet:left-[-23rem] desktop:-left-[0rem]">
-        <Image alt="Doodles" src={upperStroke} />
+        <Image
+          alt="Doodles"
+          width={500}
+          style={{ marginTop: 550 }}
+          src={upperStroke}
+        />
       </div>
 
       <div className="absolute top-[30rem] right-[-15rem] tablet:-right-[8rem] largeTablet:top-[6rem] largeTablet:laptop:-right-[6rem] laptop:-right-[4rem] desktop:-right-[3rem]">
-        <Image alt="Doodles" src={upperStrokeInv} />
+        <Image alt="Doodles" width={500} src={upperStrokeInv} />
       </div>
 
       <div className="absolute hidden largeTablet:block top-[95rem] -left-[5rem]">

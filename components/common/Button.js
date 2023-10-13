@@ -5,6 +5,7 @@ import React from "react";
 import { AiFillGithub } from "react-icons/ai";
 
 const Button = ({
+  contactNumber,
   children,
   href = "#",
   borderVariant = "neon",
@@ -22,24 +23,40 @@ const Button = ({
     backgroundVariant === "orange" || gitHub ? "bg-[#211E1C]" : "bg-darkBG";
 
   return (
-    <Link href={href} passHref>
-      <div
-        className={`${commonStyle} ${widthStyle} ${borderVariantStyle} transition-all ease-in-out duration-400`}
-      >
+    <>
+      {contactNumber ? (
         <div
-          className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle} transition-all ease-in-out duration-400`}
+          className={`${commonStyle} ${widthStyle} ${borderVariantStyle} transition-all ease-in-out duration-400`}
         >
-          <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex transition-all ease-in-out duration-400">
-            {gitHub && (
-              <span className="mr-2">
-                <AiFillGithub />
-              </span>
-            )}
-            {children}
-          </span>
+          <div
+            className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle} transition-all ease-in-out duration-400`}
+          >
+            <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex transition-all ease-in-out duration-400">
+              <a href={contactNumber}>Call Us</a>
+            </span>
+          </div>
         </div>
-      </div>
-    </Link>
+      ) : (
+        <Link href={href} passHref>
+          <div
+            className={`${commonStyle} ${widthStyle} ${borderVariantStyle} transition-all ease-in-out duration-400`}
+          >
+            <div
+              className={`h-full w-full min-h-[38px] rounded-md flex justify-center items-center px-3 py-[6px] ${backgroundVariantStyle} transition-all ease-in-out duration-400`}
+            >
+              <span className="font-bold text-sm leading-[1] text-[#FEF8F4] flex transition-all ease-in-out duration-400">
+                {gitHub && (
+                  <span className="mr-2">
+                    <AiFillGithub />
+                  </span>
+                )}
+                {children}
+              </span>
+            </div>
+          </div>
+        </Link>
+      )}
+    </>
   );
 };
 

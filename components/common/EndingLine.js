@@ -10,7 +10,7 @@ const EndingLine = () => {
     <div className="w-full flex px-1 largeTablet:px-6 mb-10">
       <div
         ref={ref}
-        className="relative flex-1 bg-gradient-to-b border-b-0 border-l-0 border-r-[#F87216] border-t-[#F87216] border h-[200px] w-full to-gray-800"
+        className="relative flex-1 bg-gradient-to-b border-b-0 border-l-0 border-r-[#A428BC] border-t-[#A428BC] border h-[200px] w-full to-gray-800"
       >
         <motion.img
           initial={{ opacity: 0, scale: 0.2 }}

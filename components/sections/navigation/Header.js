@@ -13,7 +13,8 @@ const Header = ({ navigationItems }) => {
     <SectionWrapper direction="row" pbs={0}>
       <header className="flex flex-grow py-9 font-inter justify-between items-center">
         <DesktopNavigation logo={logo} navigationItems={navigationItems} />
-        <div className="flex w-full largeTablet:hidden">
+        <div className="flex">
+          {/* // w-full largeTablet:hidden */}
           <MobileNavigation logo={logo} navigationItems={navigationItems} />
         </div>
       </header>
