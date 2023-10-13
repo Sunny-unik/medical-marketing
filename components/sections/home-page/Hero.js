@@ -7,6 +7,7 @@ import ContainerWithLine from "../../common/ContainerWithLine";
 import { Heading, Typography } from "../../common/text";
 import Logos from "./Logos";
 import Image from "next/image";
+import addSpanTags from "@/utils/addSpanTag";
 // import Button from "../../common/Button";
 // import DecoratedText from "../../common/text/utils/DecoratedText";
 // import Image from "next/image";
@@ -37,7 +38,7 @@ const Hero = ({ data }) => {
                   alignLarge="left"
                   variant="preHeading"
                 >
-                  {h1[0].text}
+                  {addSpanTags(h1[0].text, h1[0].spans)}
                 </Typography>
 
                 <div className="relative">

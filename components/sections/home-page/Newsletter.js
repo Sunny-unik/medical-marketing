@@ -7,18 +7,19 @@ import { Heading, Typography } from "../../common/text";
 import GradientBorderWrapper from "../../common/GradientBorderWrapper";
 
 // Static assets
-import StrokeR3 from "../../../public/background-strokes/_3_rightStroke.svg";
-import StrokeL3 from "../../../public/background-strokes/_3_leftStroke.svg";
+import StrokeR3 from "../../../public/background-strokes/MM completo lado2.png";
+import StrokeL3 from "../../../public/background-strokes/MM flecha lado4.png";
 
 const Newsletter = () => {
   return (
     <SectionWrapper pt={100} pb={250}>
       <div className="relative w-screen">
         <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[10rem] left-[-30rem] largeTablet:left-[-15rem]">
-          <Image alt="Doodles" src={StrokeL3} />
+          <Image width={500}  alt="Doodles" src={StrokeL3} />
         </div>
         <div className="absolute largeTablet:block top-[-14rem] largeTablet:-top-[22rem] right-[-34rem] largeTablet:-right-[32rem]">
-          <Image alt="Doodles" src={StrokeR3} />
+          <Image width={500} style={{marginRight:200}} className="largeTablet:-mr-100" alt="Doodles" src={StrokeR3} />
+          
         </div>
       </div>
 

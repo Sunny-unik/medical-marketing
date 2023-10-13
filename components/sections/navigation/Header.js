@@ -5,7 +5,7 @@ import SectionWrapper from "../../common/layout/SectionWrapper";
 import DesktopNavigation from "./DesktopNavigation";
 import MobileNavigation from "./MobileNavigation";
 
-import BrandLogo from "../../../public/vercel.svg";
+import BrandLogo from "../../../public/logo3-removebg.png";
 
 const Header = ({ navigationItems }) => {
   let logo = BrandLogo;
