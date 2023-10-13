@@ -6,7 +6,7 @@ import Image from "next/image";
 import SectionWrapper from "../common/layout/SectionWrapper";
 import SocialLinks from "../common/SocialLinks";
 
-import MedicalMarketingLogo from "../../public/next.svg";
+import MedicalMarketingLogo from "../../public/medicosLogo/medicos-logo-trans-wt.png";
 
 const footerContext = {
   pages: [
@@ -85,8 +85,8 @@ const Footer = ({ pressPage, navigationItems }) => {
                   +1 (123) 456-7890
                 </LocalTypography> */}
                 <LocalTypography variant="item1">
-                  <a href="mailto:handle4sunny@gmail.com">
-                    handle4sunny@gmail.com
+                  <a href="mailto:manuguerrerof@gmail.com">
+                    manuguerrerof@gmail.com
                   </a>
                 </LocalTypography>
               </div>
