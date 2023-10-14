@@ -50,6 +50,7 @@ const Links = ({ services }) => {
                                   : OrangeRightArrowSmall
                               }
                               alt="Visit"
+                              width="auto"
                             />
                           </div>
                         </div>

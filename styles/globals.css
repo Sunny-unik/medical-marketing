@@ -18,7 +18,7 @@ body {
   color: "#FFF9ED" !important;
 }
 
-body>div {
+body > div {
   overflow-x: hidden;
 }
 
@@ -31,8 +31,24 @@ a {
   box-sizing: border-box;
 }
 
-.boldToGrad>p>strong {
+.boldToGrad > p > strong {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-mm_primary to-mm_secondary;
+}
+
+.featuredHeading p > strong {
+  --tw-gradient-text: #fcb60a, #a428bc;
+  background-image: linear-gradient(to right, var(--tw-gradient-text));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* #ed5332, */
+.featuredText p > strong {
+  --tw-gradient-text: #fcb60a, #a428bc;
+  background-image: linear-gradient(to right, var(--tw-gradient-text));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @layer components {

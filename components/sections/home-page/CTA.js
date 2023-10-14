@@ -2,7 +2,7 @@ import React from "react";
 
 // Components
 import SectionWrapper from "../../common/layout/SectionWrapper";
-import { Heading, Typography } from "../../common/text";
+import { Typography } from "../../common/text";
 import Button from "../../common/Button";
 
 const CTA = ({ data }) => {
