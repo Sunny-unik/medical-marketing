@@ -15,6 +15,7 @@ const FeaturedPost = ({ data }) => {
             <div className="flex-1  h-[496px] relative rounded-[5px] overflow-hidden ">
               <Image
                 src={src}
+                width="auto"
                 layout="fill"
                 objectFit="cover"
                 alt="Post cover"

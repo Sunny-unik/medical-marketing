@@ -60,12 +60,12 @@ const Post = ({ data, featured }) => {
       </div>
       <div className="flex items-center pb-6 largeTablet:pb-10 ">
         <div className="flex-shrink-0 mr-2">
-          <Image src={OrangeAuthor} alt="Author" />
+          <Image width="auto" src={OrangeAuthor} alt="Author" />
         </div>
 
         <LocalTypography>{author}</LocalTypography>
         <div className="flex-shrink-0 mr-2 ml-4">
-          <Image src={OrangeClock} alt="Time" />
+          <Image width="auto" src={OrangeClock} alt="Time" />
         </div>
 
         <LocalTypography>{`${getReadTime(blogContent || "")} ${

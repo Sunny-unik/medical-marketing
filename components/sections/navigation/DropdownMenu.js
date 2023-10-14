@@ -13,7 +13,11 @@ const DropdownMenu = ({ menuItems, className, label }) => {
       {({ open }) => (
         <>
           <Menu.Button className="text-white" aria-label={label}>
-            <Image src={open ? MobileCloseMenu : MobileMenu} alt="Menu" />
+            <Image
+              width="auto"
+              src={open ? MobileCloseMenu : MobileMenu}
+              alt="Menu"
+            />
           </Menu.Button>
 
           <Transition

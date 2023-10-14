@@ -7,7 +7,7 @@ import ContainerWithLine from "../../common/ContainerWithLine";
 import { Heading, Typography } from "../../common/text";
 import Logos from "./Logos";
 import Image from "next/image";
-import addSpanTags from "@/utils/addSpanTag";
+import { RichText } from "prismic-reactjs";
 // import Button from "../../common/Button";
 // import DecoratedText from "../../common/text/utils/DecoratedText";
 // import Image from "next/image";
@@ -37,8 +37,9 @@ const Hero = ({ data }) => {
                   alignSmall="left"
                   alignLarge="left"
                   variant="preHeading"
+                  isFeatured
                 >
-                  {addSpanTags(h1[0].text, h1[0].spans)}
+                  {RichText.render(h1)}
                 </Typography>
 
                 <div className="relative">
@@ -49,8 +50,12 @@ const Hero = ({ data }) => {
                     width={left_side_icon.dimensions.width}
                     height={left_side_icon.dimensions.height}
                   />
-                  <Heading component="h1" alignSmall="left" alignLarge="left">
-                    {header[0].text}
+                  <Heading
+                    component="featured"
+                    alignSmall="left"
+                    alignLarge="left"
+                  >
+                    {RichText.render(header)}
                   </Heading>
                 </div>
 
@@ -59,8 +64,9 @@ const Hero = ({ data }) => {
                     alignLarge="left"
                     alignSmall="left"
                     variant="body3"
+                    isFeatured
                   >
-                    {sub_header[0].text}
+                    {RichText.render(sub_header)}
                   </Typography>
                 </div>
 

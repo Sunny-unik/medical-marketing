@@ -25,22 +25,20 @@ const className = [
 const Features = ({ data }) => {
   return (
     <SectionWrapper pbs={0}>
-      {data?.map((feature, i) => (
-        <>
-          {feature.slice_type === "content_with_image" ? (
-            <Feature
-              key={feature.id}
-              feature={feature}
-              index={i}
-              className={className[0]}
-            />
-          ) : (
-            <ContainerWithLine>
-              <CTA data={data[i].primary} />
-            </ContainerWithLine>
-          )}
-        </>
-      ))}
+      {data?.map((feature, i) => {
+        return feature.slice_type === "content_with_image" ? (
+          <Feature
+            key={feature.id}
+            feature={feature}
+            index={i}
+            className={className[0]}
+          />
+        ) : (
+          <ContainerWithLine key={feature.id}>
+            <CTA data={feature.primary} />
+          </ContainerWithLine>
+        );
+      })}
 
       <EndingLine />
     </SectionWrapper>
