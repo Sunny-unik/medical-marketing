@@ -5,10 +5,12 @@ const Typography = ({
   variant = "title1",
   children,
   alignLarge = "center",
-  alignSmall = "left"
+  alignSmall = "left",
+  isFeatured
 }) => {
   const isLargeTablet = useMediaQuery();
   const commonStyle = `w-full text-textPrimary`;
+  const featuredClassName = isFeatured ? "featuredText" : "";
 
   const preHeadingStyle = `font-bold text-xs tracking-[0.2em] opacity-70 uppercase mb-4`;
   const subheadingStyle =
@@ -42,14 +44,15 @@ const Typography = ({
       ? subheadingStyle
       : "";
   return (
-    <p
+    <span
       style={{
-        textAlign: isLargeTablet ? alignLarge : alignSmall
+        textAlign: isLargeTablet ? alignLarge : alignSmall,
+        display: "block"
       }}
-      className={`${commonStyle} ${appliedStyle}`}
+      className={`${commonStyle} ${appliedStyle} ${featuredClassName}`}
     >
       {children}
-    </p>
+    </span>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-// import { Heading, Typography } from "../../../common/text";
+import { Heading, Typography } from "../../../common/text";
 import ContainerWithLine from "../../../common/ContainerWithLine";
 
 import { motion } from "framer-motion";
@@ -34,8 +34,8 @@ const Feature = ({ feature, className }) => {
     <ContainerWithLine>
       <div className="pb-14 largeTablet:mb-32">
         <div className="flex gap-y-24 py-10 flex-col-reverse largeTablet:flex-col">
-          {does_it_have_date_ && adjustCurrentDate(-5).toDateString()}
           <div ref={refIcon} className=" flex flex-col px-6 gap-y-8">
+            {does_it_have_date_ && adjustCurrentDate(-7).toDateString()}
             {(smallImageUrl || title[0]?.text) && (
               <div className="relative largeTablet:max-w-[500px]">
                 {smallImageUrl && (
@@ -69,9 +69,9 @@ const Feature = ({ feature, className }) => {
                       ease: "easeInOut"
                     }}
                   >
-                    {/* <Heading component="h2" alignLarge="left"> */}
-                    {RichText.render(title)}
-                    {/* </Heading> */}
+                    <Heading component="featured" alignLarge="left">
+                      {RichText.render(title)}
+                    </Heading>
                   </motion.div>
                 )}
               </div>
@@ -87,9 +87,9 @@ const Feature = ({ feature, className }) => {
                 }}
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeInOut" }}
               >
-                {/* <Typography variant="subheading" alignLarge="left"> */}
-                {RichText.render(text)}
-                {/* </Typography> */}
+                <Typography variant="body1" isFeatured={true} alignLarge="left">
+                  {RichText.render(text)}
+                </Typography>
               </motion.div>
             </div>
           </div>
@@ -112,12 +112,12 @@ const Feature = ({ feature, className }) => {
               </div>
             )}
 
-            {smallImageUrl && (
+            {!!images.length && (
               <div className="relative flex largeTablet:hidden justify-center largeTablet:min-h-[350px]">
                 <img
                   className={`relative ${className.sm}`}
-                  src={smallImageUrl}
-                  alt={smallImageAlt}
+                  src={images[0].url}
+                  alt={images[0].alt}
                 />
               </div>
             )}

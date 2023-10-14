@@ -38,6 +38,17 @@ const Heading = ({
       </h3>
     );
   }
+  if (component === "featured") {
+    return (
+      <div
+        style={{ textAlign: isLargeTablet ? alignLarge : alignSmall }}
+        className={`featuredHeading ${commonStyle} largeTablet:
+        largeTablet:text-4xl`}
+      >
+        {children}
+      </div>
+    );
+  }
   return (
     <h1
       style={{
