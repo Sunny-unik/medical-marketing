@@ -21,7 +21,7 @@ const DesktopNavigation = ({ navigationItems, logo }) => {
     <div className="items-center w-full justify-between flex largeTablet:mr-5 mb-5 largeTablet:mb-0">
       <div className=" hidden largeTablet:block h-[26px] w-[150px] cursor-pointer">
         <Link href="/" passHref>
-          <img src={logo} alt="Open Sauced" />
+          <img src={logo} alt="Brand Logo" />
         </Link>
       </div>
       {/* <div className="flex gap-8">

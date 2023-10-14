@@ -29,7 +29,8 @@ export default function Home({ landingPageData, commonData }) {
       {/* <Logos data={homePageData.hero.users} /> */}
       <Features data={featuresData} />
       {/* <Testimonials data={homePageData.testimonialsSection} /> */}
-      <Newsletter />
+
+      {/* <Newsletter /> */}
     </PageLayout>
   );
 }

@@ -23,6 +23,10 @@ const className = [
 ];
 
 const Features = ({ data }) => {
+  const lastCta = [...data]
+    .reverse()
+    .find((e) => e.slice_type === "call_to_action");
+
   return (
     <SectionWrapper pbs={0}>
       {data?.map((feature, i) => {
@@ -33,6 +37,8 @@ const Features = ({ data }) => {
             index={i}
             className={className[0]}
           />
+        ) : i == data.length - 1 ? (
+          <span key={i}></span>
         ) : (
           <ContainerWithLine key={feature.id}>
             <CTA data={feature.primary} />
@@ -41,6 +47,8 @@ const Features = ({ data }) => {
       })}
 
       <EndingLine />
+
+      <CTA data={lastCta.primary} />
     </SectionWrapper>
   );
 };
