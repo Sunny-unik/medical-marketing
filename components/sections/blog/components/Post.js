@@ -7,7 +7,7 @@ import GradientBorderWrapper from "../../../common/GradientBorderWrapper";
 import { Typography } from "../../../common/text";
 import OrangeClock from "../../../../public/next.svg";
 import OrangeAuthor from "../../../../public/favicon.ico";
-import { Button } from "../../../common/Button";
+import Button from "../../../common/Button";
 import LocalTypography from "./LocalTypography";
 
 const Post = ({ data, featured }) => {

@@ -5,18 +5,6 @@ export const commonData = {
     { _type: "navigation", url: "/about", label: "About" },
     { _type: "navigation", url: "/blog", label: "Blog" }
   ],
-  seoData: {
-    _type: "seo",
-    title: "string",
-    description: "string",
-    url: "/",
-    image: {
-      _type: "/vercel.svg",
-      asset: "",
-      crop: "",
-      hotspot: ""
-    }
-  },
   footer: [
     {
       type: "seo",

@@ -12,16 +12,16 @@ import { commonData } from "@/services/dummyData";
 export default function Home({ landingPageData, commonData }) {
   console.log(landingPageData);
 
-  const heroData = landingPageData[0].data.body.filter(
-    (x) => x.slice_type == "hero_landing"
-  )[0];
-  const featuresData = landingPageData[0].data.body.filter((x) =>
+  const { body, seo_title, seo_description, seo_icon, seo_url } =
+    landingPageData[0].data;
+  const heroData = body.find((x) => x.slice_type == "hero_landing");
+  const featuresData = body.filter((x) =>
     ["content_with_image", "call_to_action"].includes(x.slice_type)
   );
 
   return (
     <PageLayout
-      seoData={commonData.seoData}
+      seoData={{ seo_title, seo_description, seo_icon }}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
     >
