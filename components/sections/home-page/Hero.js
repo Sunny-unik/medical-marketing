@@ -117,7 +117,7 @@ const Hero = ({ data }) => {
       </SectionWrapper>
       <Logos
         data={{
-          logoText: featured_in[0].text,
+          logoText: featured_in[0]?.text,
           ...featured_in_image
         }}
       />

@@ -32,7 +32,7 @@ const Feature = ({ feature, className }) => {
 
   return (
     <ContainerWithLine>
-      <div className="pb-14 largeTablet:mb-32">
+      <div className="pb-2 largeTablet:mb-2">
         <div className="flex gap-y-24 py-10 flex-col-reverse largeTablet:flex-col">
           <div ref={refIcon} className=" flex flex-col px-6 gap-y-8">
             {does_it_have_date_ && adjustCurrentDate(-7).toDateString()}

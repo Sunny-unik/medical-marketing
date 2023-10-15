@@ -41,7 +41,7 @@ const Features = ({ data }) => {
           <span key={i}></span>
         ) : (
           <ContainerWithLine key={feature.id}>
-            <CTA data={feature.primary} />
+            <CTA data={feature.primary} pb={50} pbs={10} />
           </ContainerWithLine>
         );
       })}
