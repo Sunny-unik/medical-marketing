@@ -46,7 +46,9 @@ module.exports = {
         footerBG: "rgba(248, 114, 22, 0.07)",
         footerDividerColor: "rgba(248, 114, 22, 0.07)",
         mm_secondary: "#ffc400",
-        mm_primary: "rgb(164 40 188)"
+        mm_primary: "rgb(164 40 188)",
+        primary: "#a428bc",
+        secondary: "#ffc400"
       },
       fontFamily: {
         primary: "'Inter', sans-serif",

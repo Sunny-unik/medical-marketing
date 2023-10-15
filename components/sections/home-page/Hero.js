@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 // Components
 import SectionWrapper from "../../common/layout/SectionWrapper";
@@ -22,7 +21,8 @@ const Hero = ({ data }) => {
       left_side_icon,
       header,
       sub_header,
-      video_light_weight
+      video_light_weight,
+      long_version_of_video
     }
   } = data;
 
@@ -44,7 +44,7 @@ const Hero = ({ data }) => {
 
                 <div className="relative">
                   <Image
-                    className="absolute -left-[49px] largeTablet:-left-[68px] -top-[50px]"
+                    className="absolute -left-[49px] -top-[62px] largeTablet:-left-[68px] largeTablet:-top-[50px]"
                     src={left_side_icon.url}
                     alt={left_side_icon.alt}
                     width={left_side_icon.dimensions.width}
@@ -96,19 +96,21 @@ const Hero = ({ data }) => {
 
               <div className="flex-1">
                 <div>
-                  <img
-                    loading="eager"
-                    className="relative  scl -right-4"
-                    // scale-125 largeTablet:scale-125
-                    src={video_light_weight.url}
-                    alt="Insight Dashboard"
-                    style={{
-                      cursor: "pointer",
-                      maxHeight: 250,
-                      objectFit: "cover",
-                      width: "100%"
-                    }}
-                  />
+                  <a href={long_version_of_video?.embed_url} target="_blank">
+                    <img
+                      loading="eager"
+                      className="relative  scl -right-4"
+                      // scale-125 largeTablet:scale-125
+                      src={video_light_weight.url}
+                      alt="Insight Dashboard"
+                      style={{
+                        cursor: "pointer",
+                        maxHeight: 250,
+                        objectFit: "cover",
+                        width: "100%"
+                      }}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
