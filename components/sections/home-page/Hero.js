@@ -44,7 +44,7 @@ const Hero = ({ data }) => {
 
                 <div className="relative">
                   <Image
-                    className="absolute -left-[49px] -top-[62px] largeTablet:-left-[68px] largeTablet:-top-[50px]"
+                    className="absolute -left-[49px] -top-[75px] largeTablet:-left-[68px] largeTablet:-top-[64px]"
                     src={left_side_icon.url}
                     alt={left_side_icon.alt}
                     width={left_side_icon.dimensions.width}

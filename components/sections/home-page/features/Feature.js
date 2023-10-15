@@ -105,7 +105,7 @@ const Feature = ({ feature, className }) => {
                 className={`relative largeTablet:flex justify-center largeTablet:min-h-[350px] ${hide}`}
               >
                 <img
-                  className={`relative ${className.lg}`}
+                  className={`relative ${className.lg} max-w-[700px]`}
                   src={images[0].url}
                   alt={images[0].alt}
                 />
