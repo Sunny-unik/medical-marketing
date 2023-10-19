@@ -43,6 +43,9 @@ a {
   color: transparent;
 }
 /* #ed5332, */
+.featuredText p {
+  margin: 15px 0;
+}
 .featuredText p > strong {
   --tw-gradient-text: #fcb60a, #a428bc;
   background-image: linear-gradient(to right, var(--tw-gradient-text));

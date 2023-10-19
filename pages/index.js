@@ -3,7 +3,7 @@ import PageLayout from "@/components/common/layout/PageLayout";
 import Background from "@/components/sections/home-page/Background";
 import Hero from "@/components/sections/home-page/Hero";
 // import Logos from "@/components/sections/home-page/Logos";
-import Newsletter from "@/components/sections/home-page/Newsletter";
+// import Newsletter from "@/components/sections/home-page/Newsletter";
 import Features from "@/components/sections/home-page/features/Features";
 // import Testimonials from "@/components/sections/home-page/testimonials/Testimonials";
 import PrismicClient from "@/services/prismic";
@@ -21,7 +21,7 @@ export default function Home({ landingPageData, commonData }) {
 
   return (
     <PageLayout
-      seoData={{ seo_title, seo_description, seo_icon }}
+      seoData={{ seo_title, seo_description, seo_icon, seo_url }}
       navigationURLs={commonData.navigationLinks}
       BackgroundWrapper={Background}
     >
