@@ -35,7 +35,7 @@ const DesktopNavigation = ({ navigationItems, logo }) => {
       </div> */}
       <Button
         fullWidth
-        contactNumber={"tel:+34678647490"}
+        contactNumber={"tel:+917697862115"}
         href="https://medicalmarketing.es/"
         gitHub
       >

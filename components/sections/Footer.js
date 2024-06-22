@@ -85,8 +85,8 @@ const Footer = ({ pressPage, navigationItems }) => {
                   +1 (123) 456-7890
                 </LocalTypography> */}
                 <LocalTypography variant="item1">
-                  <a href="mailto:manuguerrerof@gmail.com">
-                    manuguerrerof@gmail.com
+                  <a href="mailto:sunnygandhwani027@gmail.com">
+                    sunnygandhwani027@gmail.com
                   </a>
                 </LocalTypography>
               </div>
